@@ -7,7 +7,8 @@ Board pin out.
 ## Usage
 
 Push a button to increase the interval.
- Keep it pushed for exact time you want to increase the interval.
+Keep it pushed for exact time you want to increase the interval.
+Use a custom button PB5 or pin number 17 on the board to increase a second interval.
 
 - ![](./demo.gif)
 Demo

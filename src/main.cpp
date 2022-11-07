@@ -26,7 +26,7 @@ void toggle()
 {
   for (int pin : output_pins)
   {
-    digitalWrite(pin, pin % 2);
+    digitalWrite(pin, pin % 2 ? status : !status);
   }
   status = !status;
 }
@@ -45,12 +45,7 @@ void loop()
   delay(clock_ms);
   slept_ms += clock_ms;
 
-  if (!status && slept_ms > interval_ms)
-  {
-    toggle();
-    slept_ms = 0;
-  }
-  else if (status && slept_ms > interval2_ms)
+  if ((!status && slept_ms > interval_ms) || (status && slept_ms > interval2_ms))
   {
     toggle();
     slept_ms = 0;
